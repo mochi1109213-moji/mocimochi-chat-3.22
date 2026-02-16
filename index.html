@@ -448,16 +448,16 @@
 
       const getBotResponse = (text) => {
         if (!text) return null;
-        if (text.includes("ヘルプ"))
+        if (text.includes("ヘルプ")) {
           return "・/cmd [文章] でアナウンス(Admin)\n・/nuke で全消去(Admin)\n・「占い」で運勢";
+        }
         if (text.includes("占い")) {
           const res = ["大吉 🌟", "吉 ✨", "中吉 👍", "凶 💀"];
-          return (
-            "今日の運勢は..." + res[Math.floor(Math.random() * res.length)]
-          );
+          return "今日の運勢は..." + res[Math.floor(Math.random() * res.length)];
         }
-        if (text.includes("こんにちは"))
+        if (text.includes("こんにちは")) {
           return "こんにちは！何かお手伝いしましょうか？";
+        }
         return null;
       };
 
